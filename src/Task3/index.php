@@ -2,11 +2,20 @@
 
 require __DIR__ . '/../../vendor/autoload.php';
 
-use Cryptocurrency\Task1\CoinMarket;
+use Cryptocurrency\Task1\{CoinMarket, Bitcoin, Dogecoin, Ethereum};
 use Cryptocurrency\Task3\MarketHtmlPresenter;
+
+function generateTestPrice(): float
+{
+    return mt_rand(0, 10000) . '.' . mt_rand(0, 99);
+}
 
 // Fill in your market with currencies and use your presenter to show data here:
 $market = new CoinMarket();
+$market->addCurrency(new Bitcoin(generateTestPrice()));
+$market->addCurrency(new Ethereum(generateTestPrice()));
+$market->addCurrency(new Dogecoin(generateTestPrice()));
+
 $marketPresenter = new MarketHtmlPresenter();
 $presentation = $marketPresenter->present($market);
 
