@@ -4,8 +4,6 @@ namespace Cryptocurrency\Task1;
 
 abstract class AbstractCoins implements Currency
 {
-    //const LOGO = self::LOGO;
-    //public static $dailyPrice;
     private $name;
     
     public function __construct(float $price)
