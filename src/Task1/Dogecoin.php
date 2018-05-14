@@ -4,6 +4,6 @@ namespace Cryptocurrency\Task1;
 
 class Dogecoin extends AbstractCoins
 {
-    public static $dailyPrice;
+    protected static $dailyPrice;
     const LOGO = 'https://s2.coinmarketcap.com/static/img/coins/32x32/74.png';
 }
